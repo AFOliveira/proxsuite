@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Fixed
+- Fix importing the Python bindings on architectures without the `instructionset` module, e.g. riscv64 ([#XXX](https://github.com/Simple-Robotics/proxsuite/pull/XXX))
+
 ## [0.8.3] - 2026-11-12
 
 ### Fixed
