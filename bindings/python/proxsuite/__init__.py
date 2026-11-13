@@ -19,10 +19,9 @@ def _load_main_module():
     import importlib
     import platform
 
-    machine = platform.machine()
-    has_vectorization_instructions = not machine.startswith(
-        ("arm", "aarch64", "power", "ppc64", "s390x", "sparc")
-    )
+    # The instructionset module is only built on x86 (see bindings/python/CMakeLists.txt).
+    machine = platform.machine().lower()
+    has_vectorization_instructions = machine in ("x86_64", "amd64", "x86")
 
     def load_module(main_module_name):
         try:
